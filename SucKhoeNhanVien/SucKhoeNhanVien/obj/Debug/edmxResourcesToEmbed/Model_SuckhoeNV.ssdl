@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SucKhoeNhanVien_PNTModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CanLamSang">
+    <Key>
+      <PropertyRef Name="Id_CLS" />
+    </Key>
+    <Property Name="Id_CLS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" Nullable="false" />
+    <Property Name="KetQua" Type="nvarchar" MaxLength="50" />
+    <Property Name="DanhGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="BsKham" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CapNghienCuu">
+    <Key>
+      <PropertyRef Name="Id_CapNghienCuu" />
+    </Key>
+    <Property Name="Id_CapNghienCuu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CapNghienCuu" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ChucVu">
+    <Key>
+      <PropertyRef Name="IdChucVu" />
+    </Key>
+    <Property Name="IdChucVu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenChucVu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GioiTinh">
+    <Key>
+      <PropertyRef Name="IdGioiTinh" />
+    </Key>
+    <Property Name="IdGioiTinh" Type="int" Nullable="false" />
+    <Property Name="TenGT" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="IdKhoa" />
+    </Key>
+    <Property Name="IdKhoa" Type="int" Nullable="false" />
+    <Property Name="TenKhoa" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LamSang_DaLieu">
+    <Key>
+      <PropertyRef Name="Id_LSDL" />
+    </Key>
+    <Property Name="Id_LSDL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" Nullable="false" />
+    <Property Name="PL_CoXuongKhop" Type="nvarchar" MaxLength="50" />
+    <Property Name="PL_ThanKinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="PL_TamThan" Type="nvarchar" MaxLength="50" />
+    <Property Name="PL_DaLieu" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenBS" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LamSang_Mat">
+    <Key>
+      <PropertyRef Name="Id_LSMat" />
+    </Key>
+    <Property Name="Id_LSMat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" Nullable="false" />
+    <Property Name="KhongKinhTrai" Type="nvarchar" MaxLength="50" />
+    <Property Name="KhongKinhPhai" Type="nvarchar" MaxLength="50" />
+    <Property Name="KinhPhai" Type="nvarchar" MaxLength="50" />
+    <Property Name="KinhTrai" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhMat" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhanLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="BacSiKham" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LamSang_NoiKhoa">
+    <Key>
+      <PropertyRef Name="Id_LSNK" />
+    </Key>
+    <Property Name="Id_LSNK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" Nullable="false" />
+    <Property Name="PL_TuanHoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="PL_HoHap" Type="nvarchar" MaxLength="50" />
+    <Property Name="PL_TieuHoa" Type="nvarchar" MaxLength="50" />
+    <Property Name="PL_ThanTietNieu" Type="nvarchar" MaxLength="50" />
+    <Property Name="PL_NoiTiet" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenBacSi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LamSang_PhuKhoa">
+    <Key>
+      <PropertyRef Name="ID_LSPK" />
+    </Key>
+    <Property Name="ID_LSPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" Nullable="false" />
+    <Property Name="SanPK" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhanLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="BSKham" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LamSang_RangHam">
+    <Key>
+      <PropertyRef Name="Id_RH" />
+    </Key>
+    <Property Name="Id_RH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" />
+    <Property Name="HamTren" Type="nvarchar" MaxLength="50" />
+    <Property Name="HamDuoi" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhVeRang" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhanLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="BSKham" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LamSang_TaiMuiHong">
+    <Key>
+      <PropertyRef Name="Id_LSTMH" />
+    </Key>
+    <Property Name="Id_LSTMH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" Nullable="false" />
+    <Property Name="TaiTrai_NoiThuong" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaiTrai_NoiTham" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaiPhai_NoiThuong" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaiPhai_NoiTham" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhTMH" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhanLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="BSKham" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LichSuBenh">
+    <Key>
+      <PropertyRef Name="Id_LichSuBenh" />
+    </Key>
+    <Property Name="Id_LichSuBenh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdNhanVien" Type="int" />
+    <Property Name="MaNV" Type="nchar" MaxLength="10" />
+    <Property Name="NgayKham" Type="datetime" />
+    <Property Name="PhanLoaiSK" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhKhac" Type="nvarchar" MaxLength="50" />
+    <Property Name="BSKham" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NghienCuu">
+    <Key>
+      <PropertyRef Name="Id_NghienCuu" />
+    </Key>
+    <Property Name="Id_NghienCuu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaSo" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenNghienCuu" Type="nvarchar" MaxLength="500" />
+    <Property Name="Id_CapNghienCuu" Type="int" />
+    <Property Name="Id_TrangThaiNghienCuu" Type="int" />
+    <Property Name="NhaTaiTro" Type="nvarchar" MaxLength="100" />
+    <Property Name="Follow" Type="nvarchar" MaxLength="100" />
+    <Property Name="NguoiPhuTrach" Type="nchar" MaxLength="100" />
+    <Property Name="Tg_ThucHien" Type="nvarchar" MaxLength="100" />
+    <Property Name="CoMauChungVN" Type="nvarchar" MaxLength="100" />
+    <Property Name="CoMauChungPNT" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayKhoiDongSite" Type="nvarchar" MaxLength="100" />
+    <Property Name="ThoiGianKTTDung" Type="nvarchar" MaxLength="100" />
+    <Property Name="TienDoThuDung" Type="nvarchar" MaxLength="100" />
+    <Property Name="ChuNhiemDeTai" Type="nvarchar" MaxLength="100" />
+    <Property Name="KinhPhi" Type="nvarchar" MaxLength="100" />
+    <Property Name="ThoiGianThucHien" Type="nvarchar" MaxLength="100" />
+    <Property Name="NguonKP" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayDuyet" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoQD" Type="nvarchar" MaxLength="100" />
+    <Property Name="DonViChuTri" Type="nvarchar" MaxLength="100" />
+    <Property Name="KQnghiemthu" Type="nvarchar" MaxLength="100" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="IdNhanVien" />
+    </Key>
+    <Property Name="IdNhanVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNV" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="Khoa" Type="int" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="CMND" Type="int" />
+    <Property Name="IdChucVu" Type="int" />
+    <Property Name="IdGioiTinh" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TienSuBenh">
+    <Key>
+      <PropertyRef Name="Id_Tiensubenh" />
+    </Key>
+    <Property Name="Id_Tiensubenh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_LichSuBenh" Type="int" Nullable="false" />
+    <Property Name="ChieuCao" Type="float" />
+    <Property Name="CanNang" Type="float" />
+    <Property Name="ChisoBMI" Type="float" />
+    <Property Name="HuyetAp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mach" Type="int" />
+    <Property Name="PhanLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="TienSuBenh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TrangThaiNghienCuu">
+    <Key>
+      <PropertyRef Name="Id_TrangThai" />
+    </Key>
+    <Property Name="Id_TrangThai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTrangThai" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_CanLamSang_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="1" />
+    <End Role="CanLamSang" Type="Self.CanLamSang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="CanLamSang">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LamSang_DaLieu_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="1" />
+    <End Role="LamSang_DaLieu" Type="Self.LamSang_DaLieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="LamSang_DaLieu">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LamSang_Mat_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="1" />
+    <End Role="LamSang_Mat" Type="Self.LamSang_Mat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="LamSang_Mat">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LamSang_NoiKhoa_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="1" />
+    <End Role="LamSang_NoiKhoa" Type="Self.LamSang_NoiKhoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="LamSang_NoiKhoa">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LamSang_PhuKhoa_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="1" />
+    <End Role="LamSang_PhuKhoa" Type="Self.LamSang_PhuKhoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="LamSang_PhuKhoa">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LamSang_RangHam_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="0..1" />
+    <End Role="LamSang_RangHam" Type="Self.LamSang_RangHam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="LamSang_RangHam">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LamSang_TaiMuiHong_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="1" />
+    <End Role="LamSang_TaiMuiHong" Type="Self.LamSang_TaiMuiHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="LamSang_TaiMuiHong">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichSuBenh_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="IdNhanVien" />
+      </Principal>
+      <Dependent Role="LichSuBenh">
+        <PropertyRef Name="IdNhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NghienCuu_CapNghienCuu">
+    <End Role="CapNghienCuu" Type="Self.CapNghienCuu" Multiplicity="0..1" />
+    <End Role="NghienCuu" Type="Self.NghienCuu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CapNghienCuu">
+        <PropertyRef Name="Id_CapNghienCuu" />
+      </Principal>
+      <Dependent Role="NghienCuu">
+        <PropertyRef Name="Id_CapNghienCuu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NghienCuu_TrangThaiNghienCuu">
+    <End Role="TrangThaiNghienCuu" Type="Self.TrangThaiNghienCuu" Multiplicity="0..1" />
+    <End Role="NghienCuu" Type="Self.NghienCuu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThaiNghienCuu">
+        <PropertyRef Name="Id_TrangThai" />
+      </Principal>
+      <Dependent Role="NghienCuu">
+        <PropertyRef Name="Id_TrangThaiNghienCuu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_ChucVu">
+    <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChucVu">
+        <PropertyRef Name="IdChucVu" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="IdChucVu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_GioiTinh">
+    <End Role="GioiTinh" Type="Self.GioiTinh" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GioiTinh">
+        <PropertyRef Name="IdGioiTinh" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="IdGioiTinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_Khoa">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="IdKhoa" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TienSuBenh_LichSuBenh">
+    <End Role="LichSuBenh" Type="Self.LichSuBenh" Multiplicity="1" />
+    <End Role="TienSuBenh" Type="Self.TienSuBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Principal>
+      <Dependent Role="TienSuBenh">
+        <PropertyRef Name="Id_LichSuBenh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SucKhoeNhanVien_PNTModel1StoreContainer">
+    <EntitySet Name="CanLamSang" EntityType="Self.CanLamSang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CapNghienCuu" EntityType="Self.CapNghienCuu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChucVu" EntityType="Self.ChucVu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GioiTinh" EntityType="Self.GioiTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LamSang_DaLieu" EntityType="Self.LamSang_DaLieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LamSang_Mat" EntityType="Self.LamSang_Mat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LamSang_NoiKhoa" EntityType="Self.LamSang_NoiKhoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LamSang_PhuKhoa" EntityType="Self.LamSang_PhuKhoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LamSang_RangHam" EntityType="Self.LamSang_RangHam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LamSang_TaiMuiHong" EntityType="Self.LamSang_TaiMuiHong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LichSuBenh" EntityType="Self.LichSuBenh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NghienCuu" EntityType="Self.NghienCuu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TienSuBenh" EntityType="Self.TienSuBenh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrangThaiNghienCuu" EntityType="Self.TrangThaiNghienCuu" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CanLamSang_LichSuBenh" Association="Self.FK_CanLamSang_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="CanLamSang" EntitySet="CanLamSang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LamSang_DaLieu_LichSuBenh" Association="Self.FK_LamSang_DaLieu_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="LamSang_DaLieu" EntitySet="LamSang_DaLieu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LamSang_Mat_LichSuBenh" Association="Self.FK_LamSang_Mat_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="LamSang_Mat" EntitySet="LamSang_Mat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LamSang_NoiKhoa_LichSuBenh" Association="Self.FK_LamSang_NoiKhoa_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="LamSang_NoiKhoa" EntitySet="LamSang_NoiKhoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LamSang_PhuKhoa_LichSuBenh" Association="Self.FK_LamSang_PhuKhoa_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="LamSang_PhuKhoa" EntitySet="LamSang_PhuKhoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LamSang_RangHam_LichSuBenh" Association="Self.FK_LamSang_RangHam_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="LamSang_RangHam" EntitySet="LamSang_RangHam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LamSang_TaiMuiHong_LichSuBenh" Association="Self.FK_LamSang_TaiMuiHong_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="LamSang_TaiMuiHong" EntitySet="LamSang_TaiMuiHong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichSuBenh_NhanVien" Association="Self.FK_LichSuBenh_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NghienCuu_CapNghienCuu" Association="Self.FK_NghienCuu_CapNghienCuu">
+      <End Role="CapNghienCuu" EntitySet="CapNghienCuu" />
+      <End Role="NghienCuu" EntitySet="NghienCuu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NghienCuu_TrangThaiNghienCuu" Association="Self.FK_NghienCuu_TrangThaiNghienCuu">
+      <End Role="TrangThaiNghienCuu" EntitySet="TrangThaiNghienCuu" />
+      <End Role="NghienCuu" EntitySet="NghienCuu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_ChucVu" Association="Self.FK_NhanVien_ChucVu">
+      <End Role="ChucVu" EntitySet="ChucVu" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_GioiTinh" Association="Self.FK_NhanVien_GioiTinh">
+      <End Role="GioiTinh" EntitySet="GioiTinh" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_Khoa" Association="Self.FK_NhanVien_Khoa">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TienSuBenh_LichSuBenh" Association="Self.FK_TienSuBenh_LichSuBenh">
+      <End Role="LichSuBenh" EntitySet="LichSuBenh" />
+      <End Role="TienSuBenh" EntitySet="TienSuBenh" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
